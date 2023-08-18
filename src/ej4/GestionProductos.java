@@ -257,6 +257,10 @@ public class GestionProductos extends javax.swing.JInternalFrame {
         jBGuardar.setEnabled(false);
         jBEliminar.enable();
         jBEliminar.setEnabled(true);
+        jBModPrecio.enable();
+        jBModPrecio.setEnabled(true);
+        jBModStock.enable();
+        jBModStock.setEnabled(true);
 
         if (jTFCodigo.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No ha ingresado un codigo");
@@ -307,9 +311,8 @@ public class GestionProductos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBModPrecioActionPerformed
 
     private void jBModStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBModStockActionPerformed
-        if (jTFStock.getText().isEmpty()){
-        }else {
-            jTFPrecio.setEditable(true);
+        if (!jTFStock.getText().isEmpty()){
+            jTFStock.setEditable(true);
             jBGuardar.setEnabled(true);
             jBEliminar.disable();
             jBEliminar.setEnabled(false);
@@ -329,6 +332,10 @@ public class GestionProductos extends javax.swing.JInternalFrame {
         jBGuardar.setEnabled(true);
         jBEliminar.disable();
         jBEliminar.setEnabled(false);
+        jBModPrecio.disable();
+        jBModPrecio.setEnabled(false);
+        jBModStock.disable();
+        jBModStock.setEnabled(false);
     }//GEN-LAST:event_jBNuevoActionPerformed
 
     private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
@@ -441,6 +448,7 @@ public class GestionProductos extends javax.swing.JInternalFrame {
                     Menu.listaProductos.add(new Producto(codigo, jTFDescripcion.getText(),precio, stock, categoria));
                 }
             }
+            JOptionPane.showMessageDialog(this, "Ha cargado el producto " + jTFDescripcion.getText() + " correctamente");
             guardarNuevo = false;
             limpiarCampos();
         } else {
