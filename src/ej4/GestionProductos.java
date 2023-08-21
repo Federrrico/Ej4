@@ -423,6 +423,7 @@ public class GestionProductos extends javax.swing.JInternalFrame {
         int stock = 0;
 
         if (guardarNuevo) {
+            
             if (jTFCodigo.getText().isEmpty()
                     || jTFDescripcion.getText().isEmpty()
                     || jTFPrecio.getText().isEmpty()
